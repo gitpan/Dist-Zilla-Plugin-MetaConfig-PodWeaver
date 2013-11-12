@@ -5,7 +5,7 @@ use Moose;
 with 'Dist::Zilla::Role::ConfigDumper';
 with 'Dist::Zilla::Role::Plugin';
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 use namespace::autoclean;
 
@@ -19,19 +19,16 @@ sub dump_config {
     my $zilla  = $self->zilla;
     my $dzp_pw;
     for (@{ $zilla->plugins }) {
-        say "D0:$_";
         if ($_->isa("Dist::Zilla::Plugin::PodWeaver")) {
             $dzp_pw = $_;
             last;
         }
     }
 
-    say "D:$dzp_pw";
     if ($dzp_pw) {
         my $weaver   = $dzp_pw->weaver;
         $dump->{plugins} = [];
         for my $plugin (@{ $weaver->plugins }) {
-            say "D:$plugin";
             push @{ $dump->{plugins} }, {
                 class   => $plugin->meta->name,
                 name    => $plugin->plugin_name,
@@ -59,7 +56,7 @@ Dist::Zilla::Plugin::MetaConfig::PodWeaver - Dump more information about Pod::We
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

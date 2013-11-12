@@ -26,4 +26,4 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-MetaConfig-PodWeaver
   homepage: https://metacpan.org/release/Dist-Zilla-Plugin-MetaConfig-PodWeaver
   repository: git://github.com/sharyanto/perl-Dist-Zilla-Plugin-MetaConfig-PodWeaver.git
-version: 0.01
+version: 0.02
